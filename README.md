@@ -1,47 +1,28 @@
-# Astro Starter Kit: Minimal
+# Leo Oliveira - Portfolio Website
+Welcome to the source code of my portfolio! This is an Astro project deployed on Vercel that fetches content from Contentful and showcases features written in React, Vue and Svelte, my preferred frameworks. All the styling is done with TailwindCSS, following a Figma layout I crafted myself.
 
-```
-npm create astro@latest -- --template minimal
-```
+## Major project goals
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+### Preconfiguration
+- [ ] Install `astro-seo`
+- [ ] Install `astro-icon`
+- [ ] Install Tailwind
+- [ ] Install Prettier
+- [ ] Install Contentful SDK
+- [ ] Install Astro framework integrations
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Code
+- [ ] Create base layout
+- [ ] Create header and navigation
+- [ ] Create hero banner
+- [ ] Create about section
+- [ ] Create hard skills section
+- [ ] Create soft skills section
+- [ ] Create portfolio section
+- [ ] Create portfolio project carousel
+- [ ] Create contact section
+- [ ] Create footer
+- [ ] Adapt to larger viewports
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Deploy
+- [ ] Connect GitHub project with Vercel
