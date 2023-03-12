@@ -4,8 +4,9 @@ Welcome to the source code of my portfolio! This is an Astro project deployed on
 ## Major project goals
 
 ### Preconfiguration
-- [ ] Install `astro-seo`
-- [ ] Install `astro-icon`
+- [x] Install `astro-seo`
+- [x] Install `astro-icon`
+- [x] Install Poppins font
 - [ ] Install Tailwind
 - [ ] Install Prettier
 - [ ] Install Contentful SDK
