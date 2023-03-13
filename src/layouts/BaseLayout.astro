@@ -1,14 +1,19 @@
 ---
 import "@fontsource/poppins";
+
+const { locale = "en-US" } = Astro.props;
 ---
 
-<html lang="en">
+<html lang={locale}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<link rel="alternate" href="https://leooliveira.me/en-US/" hreflang="en-US"/>
+		<link rel="alternate" href="https://leooliveira.me/pt-BR/" hreflang="pt-BR"/>
+		<link rel="alternate" href="https://leooliveira.me/en-US/" hreflang="x-default"/>
 	</head>
 	<body>
 		<slot></slot>

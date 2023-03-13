@@ -26,4 +26,5 @@ Welcome to the source code of my portfolio! This is an Astro project deployed on
 - [ ] Adapt to larger viewports
 
 ### Deploy
+- [ ] Configure Astro for SSR to allow locale redirects
 - [ ] Connect GitHub project with Vercel
