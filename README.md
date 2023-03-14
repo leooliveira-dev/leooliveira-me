@@ -9,7 +9,8 @@ Welcome to the source code of my portfolio! This is an Astro project deployed on
 - [x] Install Poppins font
 - [x] Install Tailwind
 - [x] Install Prettier
-- [ ] Install Contentful SDK
+- [x] Install Contentful SDK
+- [x] Create content fetch middleware
 - [ ] Install Astro framework integrations
 
 ### Code

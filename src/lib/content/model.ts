@@ -1,5 +1,10 @@
 // TODO: use Zod :)
 
+export type Image = {
+    url: string,
+    fileName: string,
+}
+
 export type ContactInfo = {
   text: string;
   icon: string;
@@ -19,7 +24,7 @@ export type HeroBanner = {
 export type About = {
     title: string;
     content: string;
-    image: string;
+    image: Image;
 }
 
 export type HardSkills = {
@@ -38,7 +43,7 @@ export type SoftSkills = {
 }
 
 export type Project = {
-    preview: string;
+    preview: Image;
     title: string;
     description: string;
     stackDescription: string;
@@ -49,7 +54,7 @@ export type Project = {
 
 export type Portfolio = {
     subtitle: string;
-    companies: string[];
+    companies: Image[];
     cardCTA: string;
     projects: Project[];
     repo: {
