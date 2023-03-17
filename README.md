@@ -4,11 +4,13 @@ Welcome to the source code of my portfolio! This is an Astro project deployed on
 ## Major project goals
 
 ### Preconfiguration
-- [ ] Install `astro-seo`
-- [ ] Install `astro-icon`
-- [ ] Install Tailwind
-- [ ] Install Prettier
-- [ ] Install Contentful SDK
+- [x] Install `astro-seo`
+- [x] Install `astro-icon`
+- [x] Install Poppins font
+- [x] Install Tailwind
+- [x] Install Prettier
+- [x] Install Contentful SDK
+- [x] Create content fetch middleware
 - [ ] Install Astro framework integrations
 
 ### Code
@@ -25,4 +27,5 @@ Welcome to the source code of my portfolio! This is an Astro project deployed on
 - [ ] Adapt to larger viewports
 
 ### Deploy
+- [ ] Configure Astro for SSR to allow locale redirects
 - [ ] Connect GitHub project with Vercel

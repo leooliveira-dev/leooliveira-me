@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { fetchHomeContent } from "../lib/content/contentful/";
+
+export const getStaticPaths = () => [
+	{ params: { locale: "en-US"}},
+	{ params: { locale: "pt-BR"}},
+];
+
+const { locale = "en-US" } = Astro.params;
+
+const {
+	heroBanner,
+	about,
+	hardSkills,
+	softSkills,
+	portfolio,
+	contact,
+	footer
+} = await fetchHomeContent(locale);
+---
+
+<BaseLayout locale={locale}>
+	<h1>What locale am I in? {locale}</h1>
+</BaseLayout>
