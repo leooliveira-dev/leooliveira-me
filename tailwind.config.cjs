@@ -16,6 +16,9 @@ module.exports = {
 			'5xl': "1536px"
 		},
 		extend: {
+			fontFamily: {
+				poppins: ["Poppins", "sans-serif"]
+			},
 			container: {
 				center: true,
 				padding: {
