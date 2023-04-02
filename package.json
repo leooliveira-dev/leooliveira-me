@@ -23,6 +23,7 @@
     "astro-icon": "^0.8.0",
     "astro-seo": "^0.7.1",
     "contentful": "^9.3.3",
+    "dayjs": "^1.11.7",
     "prettier": "2.8.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
