@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import { fetchHomeContent } from "../lib/content/contentful/";
 import ContactSection from "../components/ContactSection.astro";
 import AboutSection from "../components/AboutSection.astro";
+import HeroBanner from "../components/HeroBanner.astro";
 
 export const getStaticPaths = () => [
   { params: { locale: "en-US" } },
@@ -18,9 +19,8 @@ const content = await fetchHomeContent(locale);
 
 <BaseLayout locale={locale}>
   <Header />
-  <main class="flex-grow">
-    <AboutSection data={content.about} />
-    <ContactSection data={content.contact} />
-  </main>
+  <HeroBanner data={content.heroBanner}/>
+  <AboutSection data={content.about} />
+  <ContactSection data={content.contact} />
   <Footer data={content.footer} />
 </BaseLayout>
