@@ -3,10 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { fetchHomeContent } from "../lib/content/contentful/";
+import ContactSection from "../components/ContactSection.astro";
 
 export const getStaticPaths = () => [
-	{ params: { locale: "en-US"}},
-	{ params: { locale: "pt-BR"}},
+  { params: { locale: "en-US" } },
+  { params: { locale: "pt-BR" } },
 ];
 
 const { locale = "en-US" } = Astro.params;
@@ -15,11 +16,9 @@ const content = await fetchHomeContent(locale);
 ---
 
 <BaseLayout locale={locale}>
-	<Header/>
-	<main class="flex-grow">
-		<section class="h-screen container">
-			<h1>What locale am I in? {locale}</h1>
-		</section>
-	</main>
-	<Footer data={content.footer}/>
+  <Header />
+  <main class="flex-grow">
+    <ContactSection data={content.contact} />
+  </main>
+  <Footer data={content.footer} />
 </BaseLayout>
