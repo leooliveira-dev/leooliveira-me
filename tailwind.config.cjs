@@ -23,8 +23,8 @@ module.exports = {
 				center: true,
 				padding: {
 					'3xs': "0.75rem",
-					'2xs': "0.75rem",
-					'xs': "0.75rem",
+					'2xs': "2rem",
+					'xs': "2rem",
 					'sm': "2rem",
 					'md': "3rem",
 					'lg': "3rem",
