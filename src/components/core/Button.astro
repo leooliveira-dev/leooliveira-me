@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon";
+import { url as urlRegex } from "../../lib/helpers/regex";
+
+interface Props {
+  link?: string;
+  icon?: string;
+  color?: "primary" | "secondary";
+  text?: string;
+}
+
+const { link, icon, text, color = "primary" } = Astro.props;
+
+const composeClass = () => {
+  const base = "py-4 px-6 flex flex-row items-center cursor-pointer font-semibold";
+
+  const colors =
+    color === "primary"
+      ? "bg-zinc-900 text-zinc-50"
+      : "border-2 border-zinc-900 bg-zinc-50";
+
+  const display = icon ? "justify-start gap-2" : "justify-center";
+
+  return base + " " + colors + " " + display;
+};
+
+const iconClass = color === "primary" ? "text-zinc-50" : "text-zinc-900";
+
+const isLinkExternal = link && urlRegex.test(link)
+---
+
+{
+  link ? (
+    <a class={composeClass()} href={link} target="_blank">
+      {icon && <Icon size={18} class={iconClass} name={icon} />}
+      <span>{text}</span>
+      {isLinkExternal && <Icon size={16} class="text-zinc-500" name="ri:external-link-fill" />}
+    </a>
+  ) : (
+    <button class={composeClass()}>
+      {icon && <Icon size={18} class={iconClass} name={icon} />}
+      <span>{text}</span>
+    </button>
+  )
+}
