@@ -7,6 +7,7 @@ import ContactSection from "../components/ContactSection.astro";
 import AboutSection from "../components/AboutSection.astro";
 import HeroBanner from "../components/HeroBanner.astro";
 import HardSkillsSection from "../components/HardSkillsSection.astro";
+import SoftSkillsSection from "../components/SoftSkillsSection.astro";
 
 export const getStaticPaths = () => [
   { params: { locale: "en-US" } },
@@ -23,6 +24,7 @@ const content = await fetchHomeContent(locale);
   <HeroBanner data={content.heroBanner}/>
   <AboutSection data={content.about} />
   <HardSkillsSection data={content.hardSkills}/>
+  <SoftSkillsSection data={content.softSkills}/>
   <ContactSection data={content.contact} />
   <Footer data={content.footer} />
 </BaseLayout>

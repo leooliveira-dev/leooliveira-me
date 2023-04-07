@@ -15,10 +15,10 @@ Welcome to the source code of my portfolio! This is an Astro project deployed on
 ### Code
 - [x] Create base layout
 - [ ] Create header and navigation
-- [ ] Create hero banner
-- [ ] Create about section
-- [ ] Create hard skills section
-- [ ] Create soft skills section
+- [x] Create hero banner
+- [x] Create about section
+- [x] Create hard skills section
+- [x] Create soft skills section
 - [ ] Create portfolio section
 - [ ] Create portfolio project carousel
 - [x] Create contact section

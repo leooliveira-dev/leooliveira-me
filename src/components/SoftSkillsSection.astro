@@ -1,0 +1,23 @@
+---
+import type { SoftSkills } from "../lib/content/model";
+import Button from "./core/Button.astro";
+
+interface Props {
+  data: SoftSkills;
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-12 bg-zinc-500">
+  <div class="container flex flex-col gap-6">
+    <h2 class="text-zinc-50 text-3xl font-semibold text-center" set:html={data.title}></h2>
+    <div class="w-full flex flex-col gap-3">
+      {
+        data.skills.map((skill) => (
+          <Button color="secondary" text={skill.name} icon={skill.icon} />
+        ))
+      }
+    </div>
+  </div>
+</section>
