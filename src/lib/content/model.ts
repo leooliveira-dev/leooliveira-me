@@ -12,7 +12,7 @@ export type ContactInfo = {
 };
 
 export type Skill = {
-    text: string;
+    name: string;
     icon: string;
 }
 
