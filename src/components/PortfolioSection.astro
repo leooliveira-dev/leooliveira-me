@@ -1,0 +1,34 @@
+---
+import type { Portfolio } from "../lib/content/model";
+import Carousel from "./react/Carousel";
+import PortfolioProjectCard from "./PortfolioProjectCard.astro";
+
+interface Props {
+  data: Portfolio;
+}
+
+const { data } = Astro.props;
+---
+
+<section id="portfolio" class="py-12">
+  <div class="container flex flex-col gap-6">
+    <h2 class="text-3xl font-semibold text-center">Portfolio</h2>
+    <h4 class="text-zinc-700 text-center" set:html={data.subtitle} />
+    <ul class="grid grid-cols-4 gap-6">
+      {
+        data.companies.map((company) => (
+          <li class="self-center">
+            <img
+              class="grayscale hover:grayscale-0"
+              src={company.url}
+              alt={company.fileName}
+            />
+          </li>
+        ))
+      }
+    </ul>
+    <Carousel client:only length={data.projects.length}>
+        {data.projects.map((project) => <PortfolioProjectCard data={project} cta={data.cardCTA} />)}
+    </Carousel>
+  </div>
+</section>

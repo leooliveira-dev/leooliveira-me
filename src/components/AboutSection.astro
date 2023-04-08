@@ -1,0 +1,19 @@
+---
+import type { About } from "../lib/content/model";
+
+interface Props {
+  data: About;
+}
+
+const { data } = Astro.props;
+---
+
+<section id="about" class="bg-zinc-900 py-12">
+  <div class="container flex flex-col items-center gap-6">
+    <h2
+      class="text-3xl text-zinc-50 text-center font-semibold"
+      set:html={data.title}
+    />
+    <h4 class="text-zinc-200 flex flex-col gap-6" set:html={data.content} />
+  </div>
+</section>

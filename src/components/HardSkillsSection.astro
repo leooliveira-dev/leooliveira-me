@@ -1,0 +1,23 @@
+---
+import type { HardSkills } from "../lib/content/model";
+
+import HardSkillsGrid from "./HardSkillsGrid.astro";
+
+interface Props {
+    data: HardSkills;
+}
+
+const { data } = Astro.props;
+---
+
+<section id="hard-skills" class="py-12">
+    <div class="container flex flex-col items-center gap-6">
+        <h2 class="text-3xl font-semibold" set:html={data.title}></h2>
+        <h4 class="text-center text-zinc-700" set:html={data.subtitle}></h4>
+        <HardSkillsGrid title="Core" columns={3} skills={data.fundamentals}/>
+        <HardSkillsGrid title="CSS" columns={3} skills={data.css}/>
+        <HardSkillsGrid title="UI Frameworks" columns={3} skills={data.ui}/>
+        <HardSkillsGrid title="Metaframeworks" columns={5} skills={data.metas}/>
+        <HardSkillsGrid title="Tools" columns={5} skills={data.tools}/>
+    </div>
+</section>

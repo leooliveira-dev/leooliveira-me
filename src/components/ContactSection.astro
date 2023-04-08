@@ -1,0 +1,30 @@
+---
+import type { Contact } from "../lib/content/model";
+
+import Button from "./core/Button.astro";
+
+interface Props {
+  data: Contact;
+}
+
+const { data } = Astro.props;
+---
+
+<section id="contact" class="bg-zinc-700 py-12">
+  <div class="container flex flex-col items-center gap-6">
+    <h2
+      class="text-3xl text-zinc-50 text-center font-semibold"
+      set:html={data.title}
+    />
+    <h4 class="text-zinc-200 text-center" set:html={data.subtitle} />
+    <ul class="flex flex-col gap-4 w-full">
+      {
+        data.contacts.map((contact) => (
+          <li>
+            <Button color="secondary" link={contact.link} icon={contact.icon} text={contact.text}/>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

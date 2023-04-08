@@ -1,0 +1,19 @@
+---
+import type { HeroBanner } from "../lib/content/model";
+
+import { Icon } from "astro-icon";
+
+interface Props {
+  data: HeroBanner;
+}
+
+const { data } = Astro.props;
+---
+
+<section class="snap-start h-screen flex flex-col items-center justify-center">
+  <div class="container flex flex-col items-center gap-8">
+    <h1 class="text-center text-4xl" set:html={data.title}></h1>
+    <h4 class="text-center" set:html={data.subtitle}></h4>
+    <Icon name="ri:arrow-down-s-line" class="animate-bounce" size={24} />
+  </div>
+</section>

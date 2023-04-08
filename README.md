@@ -11,19 +11,19 @@ Welcome to the source code of my portfolio! This is an Astro project deployed on
 - [x] Install Prettier
 - [x] Install Contentful SDK
 - [x] Create content fetch middleware
-- [ ] Install Astro framework integrations
+- [x] Install React integration
 
 ### Code
-- [ ] Create base layout
+- [x] Create base layout
 - [ ] Create header and navigation
-- [ ] Create hero banner
-- [ ] Create about section
-- [ ] Create hard skills section
-- [ ] Create soft skills section
-- [ ] Create portfolio section
-- [ ] Create portfolio project carousel
-- [ ] Create contact section
-- [ ] Create footer
+- [x] Create hero banner
+- [x] Create about section
+- [x] Create hard skills section
+- [x] Create soft skills section
+- [x] Create portfolio section
+- [x] Create portfolio project carousel
+- [x] Create contact section
+- [x] Create footer
 - [ ] Adapt to larger viewports
 
 ### Deploy
