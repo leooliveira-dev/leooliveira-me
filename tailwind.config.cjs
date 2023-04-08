@@ -37,5 +37,15 @@ module.exports = {
 			}
 		},
 	},
-	plugins: [],
+	plugins: [
+		function ({ addUtilities, theme }) {
+			addUtilities({
+				".transition-default": {
+					transitionProperty: "all",
+					transitionDuration: "500ms",
+					transitionTimingFunction: theme("ease-in-out"),
+				}
+			})
+		}
+	],
 }
