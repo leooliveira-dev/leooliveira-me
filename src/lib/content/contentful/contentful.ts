@@ -120,6 +120,14 @@ export const fetchHomeContent = async (locale: string): Promise<HomePage> => {
   const contact = await fetchContact(homePage.fields.contact.sys.id, locale);
 
   return {
+    menu: [
+      { text: "<p>Home</p>", link: "#"},
+      { text: about.title, link: "#about"},
+      { text: hardSkills.title, link: "#hard-skills"},
+      { text: softSkills.title, link: "#soft-skills"},
+      { text: "Portfolio", link: "#portfolio"},
+      { text: contact.title, link: "#contact"},
+    ],
     heroBanner,
     about,
     hardSkills,

@@ -36,8 +36,9 @@ const DropdownMenu = (props: Props) => {
             className="w-full p-3 text-zinc-900 hover:text-zinc-50 bg-transparent hover:bg-zinc-900 transition-default"
             href={item.link}
             target={isLinkExternal(item.link) ? "_blank" : "_self"}
+            dangerouslySetInnerHTML={{__html: item.text}}
+            onClick={closeMenu}
           >
-            {item.text}
           </a>
         </li>
       ))}

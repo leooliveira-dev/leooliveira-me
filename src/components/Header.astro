@@ -1,6 +1,13 @@
 ---
 import { Icon } from "astro-icon";
 import DropdownMenu from "./react/DropdownMenu";
+import type { HomePage } from "../lib/content/model";
+
+interface Props {
+  menu: HomePage["menu"];
+}
+
+const { menu: navMenuItems } = Astro.props;
 
 const languageMenuItems = [
   {
@@ -18,7 +25,7 @@ const languageMenuItems = [
   <nav class="container">
     <ul class="flex flex-row items-center justify-end gap-2">
       <DropdownMenu client:only as="li" items={languageMenuItems}><Icon size="24" class="text-zinc-900" name="ri:translate-2" /></DropdownMenu>
-      <li><Icon size="24" class="text-zinc-900" name="ri:menu-fill" /></li>
+      <DropdownMenu client:only as="li" items={navMenuItems}><Icon size="24" class="text-zinc-900" name="ri:menu-fill" /></DropdownMenu>
     </ul>
   </nav>
 </header>

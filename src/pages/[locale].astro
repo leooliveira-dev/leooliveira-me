@@ -21,7 +21,7 @@ const content = await fetchHomeContent(locale);
 ---
 
 <BaseLayout locale={locale}>
-  <Header />
+  <Header menu={content.menu} />
   <HeroBanner data={content.heroBanner}/>
   <AboutSection data={content.about} />
   <HardSkillsSection data={content.hardSkills}/>
