@@ -1,12 +1,23 @@
 ---
 import { Icon } from "astro-icon";
-//TODO: Button features
+import DropdownMenu from "./react/DropdownMenu";
+
+const languageMenuItems = [
+  {
+    text: "English",
+    link: "/en-US",
+  },
+  {
+    text: "Português (Brasil)",
+    link: "/pt-BR",
+  },
+];
 ---
 
 <header class="z-50 bg-zinc-100 border-b-2 border-zinc-900 py-3 sticky top-0">
   <nav class="container">
     <ul class="flex flex-row items-center justify-end gap-2">
-      <li><Icon size="24" class="text-zinc-900" name="ri:translate-2" /></li>
+      <DropdownMenu client:only as="li" items={languageMenuItems}><Icon size="24" class="text-zinc-900" name="ri:translate-2" /></DropdownMenu>
       <li><Icon size="24" class="text-zinc-900" name="ri:menu-fill" /></li>
     </ul>
   </nav>
