@@ -1,0 +1,21 @@
+{
+    "redirects": [
+        {
+            "source": "/",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "x-vercel-ip-country",
+                    "value": "BR"
+                }
+            ],
+            "destination": "/pt-BR",
+            "permanent": true
+        },
+        {
+            "source": "/",
+            "destination": "/en-US",
+            "permanent": true
+        }
+    ]
+}
