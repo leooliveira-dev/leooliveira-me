@@ -3,6 +3,7 @@ import type { Project } from "../lib/content/model";
 import { Icon } from "astro-icon";
 import Button from "./core/Button.astro";
 import dayjs from "dayjs";
+import DropdownMoreInfo from "./react/DropdownMoreInfo";
 
 interface Props {
   data: Project;
@@ -14,7 +15,7 @@ const { data, cta } = Astro.props;
 ---
 
 <div
-  class="snap-start bg-zinc-50 border-2 border-zinc-900 p-6 flex flex-col gap-2 justify-between select-none"
+  class="relative snap-start bg-zinc-50 border-2 border-zinc-900 p-6 flex flex-col gap-2 justify-between select-none"
 >
   <img class="border border-zinc-900" src={data.preview.url} alt={data.preview.fileName} />
   <div class="flex flex-col gap-1">
@@ -26,11 +27,13 @@ const { data, cta } = Astro.props;
     </div>
   </div>
   <hr />
-  <div class="flex flex-row items-center justify-between gap-3 cursor-pointer">
-    <div class="flex flex-row items-center gap-3">
-      {data.stack.map((tech) => <Icon size={16} class="self-center" name={tech}/>)}
+  <DropdownMoreInfo text={data.stackDescription} client:only>
+    <div class="flex flex-row items-center justify-between gap-3 cursor-pointer">
+      <div class="flex flex-row items-center gap-3">
+        {data.stack.map((tech) => <Icon size={16} class="self-center" name={tech}/>)}
+      </div>
+      <Icon size={16} name="ri:more-fill" class="text-zinc-700"/>
     </div>
-    <Icon size={16} name="ri:more-fill" class="text-zinc-700"/>
-  </div>
+  </DropdownMoreInfo>
   <Button color="primary" link={data.link} text={cta} />
 </div>

@@ -3,22 +3,33 @@ import { Icon } from 'astro-icon';
 import type { Skill } from '../lib/content/model';
 
 interface Props {
+  className?: string;
   title: string;
   skills: Skill[];
   columns: number;
 }
 
-const { title, skills, columns } = Astro.props;
+const { className, title, skills, columns } = Astro.props;
+
+const wrapperClass = () => {
+  const base = "w-full mb-6";
+  return className ? base + " " + className : base;
+}
+
+const gridClass = () => {
+  return `flex flex-row items-end justify-center flex-wrap gap-8`
+}
 
 //TODO: Tooltips
 ---
 
-<div class="w-full mb-6">
+<div class={wrapperClass()}>
     <h3 class="text-2xl font-medium text-center mb-3">{title}</h3>
-    <div class="grid gap-8" style={`grid-template-columns: repeat(${columns}, 1fr)`}>
+    <div class={gridClass()}>
         {
-          skills.map(skill => <div class="self-center">
-            <Icon name={skill.icon} />
+          skills.map(skill => <div class="self-center flex flex-col items-center gap-2">
+            <Icon name={skill.icon} size={64}/>
+            <h4 class="hidden lg:block">{skill.name}</h4>
           </div>)
         }
     </div>

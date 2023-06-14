@@ -33,7 +33,7 @@ const DropdownMenu = (props: Props) => {
       {props.items.map((item, index) => (
         <li className="flex flex-col" key={index}>
           <a
-            className="w-full p-3 text-zinc-900 hover:text-zinc-50 bg-transparent hover:bg-zinc-900 transition-default"
+            className="w-full py-3 px-6 text-zinc-900 hover:text-zinc-50 bg-transparent hover:bg-zinc-900 transition-default"
             href={item.link}
             target={isLinkExternal(item.link) ? "_blank" : "_self"}
             dangerouslySetInnerHTML={{__html: item.text}}
