@@ -50,7 +50,7 @@ const Carousel = (props: Props) => {
       <div
         ref={carouselRef}
         onScroll={handleUserScroll}
-        className="overflow-y-scroll snap-proximity scroll-smooth snap-x grid gap-6 pb-4"
+        className="overflow-y-scroll snap-proximity scroll-smooth snap-x grid gap-6 pb-4 w-full"
         style={{ gridTemplateColumns: `repeat(${props.length}, ${cardWidth}px)` }}
       >
         {props.children}

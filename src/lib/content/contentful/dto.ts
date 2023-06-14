@@ -1,6 +1,12 @@
 import type { Entry, Asset } from "contentful";
 import type { Document } from "@contentful/rich-text-types/dist/types";
-import type { ContactInfo, Project, Skill } from "../model";
+import type { ContactInfo } from "../model";
+
+export type SkillDTO = {
+  name: string;
+  icon: string;
+  description: Document;
+}
 
 export type HeroBannerDTO = {
   title: Document;
@@ -16,17 +22,16 @@ export type AboutDTO = {
 export type HardSkillsDTO = {
   title: Document;
   subtitle: Document;
-  fundamentals: Entry<Skill>[];
-  css: Entry<Skill>[];
-  ui: Entry<Skill>[];
-  metas: Entry<Skill>[];
-  tools: Entry<Skill>[];
+  fundamentals: Entry<SkillDTO>[];
+  css: Entry<SkillDTO>[];
+  ui: Entry<SkillDTO>[];
+  metas: Entry<SkillDTO>[];
+  tools: Entry<SkillDTO>[];
 };
 
 export type SoftSkillsDTO = {
   title: Document;
-  subtitle: Document;
-  skills: Entry<Skill>[];
+  skills: Entry<SkillDTO>[];
 };
 
 export type ProjectDTO = {

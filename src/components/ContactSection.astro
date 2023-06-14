@@ -16,7 +16,7 @@ const { data } = Astro.props;
       class="text-3xl text-zinc-50 text-center font-semibold"
       set:html={data.title}
     />
-    <h4 class="text-zinc-200 text-center" set:html={data.subtitle} />
+    <h4 class="text-zinc-200 text-center sm:max-w-lg" set:html={data.subtitle} />
     <ul class="flex flex-col gap-4 w-full">
       {
         data.contacts.map((contact) => (

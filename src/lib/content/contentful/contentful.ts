@@ -7,6 +7,7 @@ import type {
   HeroBannerDTO,
   HomePageDTO,
   ProjectDTO,
+  SkillDTO,
   SoftSkillsDTO,
 } from "./dto";
 import type { HomePage, Project } from "../model";
@@ -48,17 +49,25 @@ const fetchAbout = async (id: string, locale: string) => {
   };
 };
 
+const fetchSkill = (skill: Entry<SkillDTO>) => {
+  return {
+    name: skill.fields.name,
+    icon: skill.fields.icon,
+    description: documentToHtmlString(skill.fields.description)
+  }
+}
+
 const fetchHardSkills = async (id: string, locale: string) => {
   const dto = await fetchSingleEntry<HardSkillsDTO>(id, locale, 2);
 
   return {
     title: documentToHtmlString(dto.fields.title),
     subtitle: documentToHtmlString(dto.fields.subtitle),
-    fundamentals: dto.fields.fundamentals.map((s) => s.fields),
-    css: dto.fields.css.map((s) => s.fields),
-    ui: dto.fields.ui.map((s) => s.fields),
-    metas: dto.fields.metas.map((s) => s.fields),
-    tools: dto.fields.tools.map((s) => s.fields),
+    fundamentals: dto.fields.fundamentals.map((s) => fetchSkill(s)),
+    css: dto.fields.css.map((s) => fetchSkill(s)),
+    ui: dto.fields.ui.map((s) => fetchSkill(s)),
+    metas: dto.fields.metas.map((s) => fetchSkill(s)),
+    tools: dto.fields.tools.map((s) => fetchSkill(s)),
   };
 };
 
@@ -67,8 +76,7 @@ const fetchSoftSkills = async (id: string, locale: string) => {
 
   return {
     title: documentToHtmlString(dto.fields.title),
-    subtitle: documentToHtmlString(dto.fields.subtitle),
-    skills: dto.fields.skills.map((s) => s.fields),
+    skills: dto.fields.skills.map((s) => fetchSkill(s)),
   };
 };
 

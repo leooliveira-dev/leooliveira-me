@@ -14,9 +14,10 @@ const { data } = Astro.props;
     <h2 class="text-zinc-50 text-3xl font-semibold text-center" set:html={data.title}></h2>
     <div class="w-full flex flex-col gap-3">
       {
-        data.skills.map((skill) => (
+        data.skills.map((skill) => <>
           <Button color="secondary" text={skill.name} icon={skill.icon} />
-        ))
+          <div class="border-l-2 text-sm font-regular mb-6 border-zinc-900 pl-6 text-zinc-100" set:html={skill.description}></div>
+        </>)
       }
     </div>
   </div>
