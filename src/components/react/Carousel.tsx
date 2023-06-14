@@ -11,10 +11,7 @@ const Carousel = (props: Props) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentScrollPosition, setCurrentScrollPosition] = useState(0);
 
-  const cardWidth = useMemo(
-    () => carouselRef.current?.clientWidth ?? 0,
-    [carouselRef.current?.clientWidth]
-  );
+  const cardWidth = 300;
   const fullScrollWidth = useMemo(
     () => carouselRef.current?.scrollWidth ?? 0,
     [carouselRef.current?.scrollWidth]
@@ -53,8 +50,8 @@ const Carousel = (props: Props) => {
       <div
         ref={carouselRef}
         onScroll={handleUserScroll}
-        className="overflow-y-scroll snap-proximity scroll-smooth snap-x grid gap-6"
-        style={{ gridTemplateColumns: `repeat(${props.length}, 75vw)` }}
+        className="overflow-y-scroll snap-proximity scroll-smooth snap-x grid gap-6 pb-4"
+        style={{ gridTemplateColumns: `repeat(${props.length}, ${cardWidth}px)` }}
       >
         {props.children}
       </div>
